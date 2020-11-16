@@ -4,14 +4,32 @@
 set relativenumber
 
 " Ignoring a smartcase - weird description but mostly desirable havior
-set ignorecase
-set smartcase
+set ignorecase      " Do case insensitive matching
+set smartcase       " Ignore case if search pattern is all lowercase, case-sensitive otherwise
+set bs=indent,eol,start 		" Allow backspacing over everything in insert mode
+set scrolloff=5				" keep at least 5 lines above/below cursor
+set sidescrolloff=5			" keep at least 5 columns left/right of cursor
+set autoread        " watch for file changes by other programs
+set smarttab        " make <tab> and <backspace> smarter
+set autoindent smartindent      " turn on auto/smart indenting
+set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file -- 20 jump links, regs up to 500 lines'
+set lazyredraw      " no redraws in macros
 " ------------------------------------------------------------------------
 
 " Create a few reasonable mappings?
 nmap j gj
 nmap k gk
 nmap 0 ^
+map Y y$
+
+" for german keyboard layout better
+noremap # *
+noremap * #
+nnoremap # *
+nnoremap * #
+" I don't use s much, so use it save, i use that a lot more.
+map s :w<CR>
+
 
 " ------------------------------------------------------------------------
 
@@ -26,9 +44,6 @@ nmap <leader>h :split<CR>
 
 " This is going to be vim(r)ception
 map <leader>vrc :tabe ~/.vimrc<CR>
-autocmd bufwritepost .vimrc source ~/.vimrc
-
-" ------------------------------------------------------------------------
 
 " ------------------------------------------------------------------------
 
