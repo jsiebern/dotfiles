@@ -1,0 +1,24 @@
+git config --global alias.sla 'log --oneline --decorate --graph --all'
+git config --global alias.glog 'log -E -i --grep'
+
+git config --global alias.unstage 'reset'
+git config --global alias.uncommit 'reset --soft HEAD^'
+git config --global alias.car 'commit --amend --no-edit'
+
+# Correct the most recent commit by appending everything that is staged to it
+# (The old commit stays around physically)
+git commit --amend --no-edit
+
+# Referencing commit ranges in git is done by "A..B"
+git diff origin/master..master
+
+# "git cherry-pick" applies changes from existing commits to the current branch
+# Use case example: Commited to the wrong branch and want to move those commits over
+git checkout that-other-branch
+git cherry-pick origin/master..master
+
+# In order to delete the commits in the example above after moving them, use "reset --hard"
+# The logic is to bring master back to origin/master as we have the difference now in the other branch
+git reset --hard origin/master
+
+# Git rebase 

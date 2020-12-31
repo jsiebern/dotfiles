@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combine/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/jonathansiebern/git/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/9bb75d0/
+0	.vimrc	/^nmap 0 ^$/;"	m
+<C-P>	.vimrc	/^map <C-P> :FZF<CR>$/;"	m
+<leader>A	.vimrc	/^nnoremap <leader>A :exec "Rg ".expand("<cword>")<cr>$/;"	m
+<leader>a	.vimrc	/^nnoremap <leader>a :Rg<space>$/;"	m
+<leader>h	.vimrc	/^nmap <leader>h :split<CR>$/;"	m
+<leader>q	.vimrc	/^nmap <leader>q :Bdelete<CR>$/;"	m
+<leader>v	.vimrc	/^nmap <leader>v :vsplit<CR>$/;"	m
+<leader>vrc	.vimrc	/^map <leader>vrc :tabe ~\/.vimrc<CR>$/;"	m
+OnBattery	.vimrc	/^function! OnBattery()$/;"	f
+j	.vimrc	/^nmap j gj$/;"	m
+k	.vimrc	/^nmap k gk$/;"	m
+mapleader	.vimrc	/^let mapleader = "\\<Space>"$/;"	v

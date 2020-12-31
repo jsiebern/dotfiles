@@ -97,16 +97,42 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias serva="ssh -t jsiebern@jsiebern.synology.me 'cd /volume1/Downloads; exec \$SHELL -l'"
-alias pid="ssh jsiebern@jsiebern.synology.me 'cd /volume1/Downloads; ./command.sh pid'"
-alias log="ssh -t jsiebern@jsiebern.synology.me 'cd /volume1/Downloads; ./command.sh log'"
-alias restart="ssh -t jsiebern@jsiebern.synology.me 'cd /volume1/Downloads; ./command.sh restart'"
+
+# NAS aliases
+alias serva="ssh -t jsiebern@SERVA 'cd /volume1/Downloads; exec \$SHELL -l'"
+alias pid="ssh jsiebern@SERVA 'cd /volume1/Downloads; ./command.sh pid'"
+alias log="ssh -t jsiebern@SERVA 'cd /volume1/Downloads; cat renamer.log' | grep \"Mediathek\" | cut -f7 -d/ | cut -f1 -d\' | grep \".\" | uniq | tail"
+alias logs="ssh -t jsiebern@SERVA 'cd /volume1/Downloads; cat renamer.log' | grep \"Mediathek/serien\" | cut -f7 -d/ | cut -f1 -d\' | grep \".\" | uniq | tail"
+alias logf="ssh -t jsiebern@SERVA 'cd /volume1/Downloads; cat renamer.log' | grep \"Mediathek/filme\" | cut -f7 -d/ | cut -f1 -d\' | grep \".\" | uniq | tail"
+alias restart="ssh -t jsiebern@SERVA 'cd /volume1/Downloads; ./command.sh restart'"
+
+# miha aliases
 alias miha="cd ~/git/miha/mihabackend"
 alias miha-up="miha; make start"
 alias dc="docker-compose"
+
+# Git aliases
+alias g="git status"
+alias cm="git commit -m"
+
+#k9s / k8s
+alias k9s-flytools="KUBECONFIG=~/.kube/config-flytools k9s"
+alias k="kubectl"
+
+# Helper aliases
+alias l="ls -a -ln"
+alias sz="du -sh"
+alias szz="du -hd1 | sort -rh | head -10"
+alias zsh:e="vim ~/.zshrc"
+alias zsh:s="source ~/.zshrc"
+alias v="vim"
 
 # fnm
 export PATH=/Users/jonathansiebern/.fnm:$PATH
 eval "`fnm env`"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Radicle
+export PATH=$HOME/.radicle/bin:$PATH
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"
